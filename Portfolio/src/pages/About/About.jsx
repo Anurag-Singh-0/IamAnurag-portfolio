@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import educationData from "../../data/education";
 
 // Material icons
@@ -9,14 +10,38 @@ import SchoolIcon from "@mui/icons-material/School";
 
 function About() {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      {/* Title */}
       <div className="mb-8">
-        <h1 className="text-4xl font-bold">About Me</h1>
-        <div className="border-b-5 w-[20%] rounded-2xl mt-3 border-amber-300"></div>
+        <motion.h1
+          className="text-4xl font-bold"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          About Me
+        </motion.h1>
+
+        {/* Animated border that adjusts to content width */}
+        <motion.div
+          layout
+          className="border-b-4 rounded-2xl mt-3 border-amber-300"
+          style={{ width: "fit-content" }}
+          transition={{ duration: 0.4 }}
+        />
       </div>
 
-      {/* About Bio Section */}
-      <div className="lg:min-h-[27vh] flex flex-col justify-between items-start mb-8">
+      {/* Bio Section */}
+      <motion.div
+        className="lg:min-h-[27vh] flex flex-col justify-between items-start mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
         <p className="text-[15px] text-white/80">
           Aspiring Full-Stack Developer skilled in HTML, CSS, JavaScript, React,
           Node.js, Express.js, MongoDB, and SQL. Passionate about web
@@ -32,10 +57,15 @@ function About() {
         >
           View Resume
         </a>
-      </div>
+      </motion.div>
 
       {/* Card Section */}
-      <div className="mb-10">
+      <motion.div
+        className="mb-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 }}
+      >
         <h1 className="text-2xl font-bold mb-6">What I'm Doing, Right Now</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -55,14 +85,18 @@ function About() {
             desc="I love clicking photos and capturing everyday moments in a creative way. Photography helps me see the beauty in little things and share my perspective with others"
           />
         </div>
-      </div>
+      </motion.div>
 
-      {/* Education & Experience Section */}
-      <div className="mt-12">
+      {/* Education Section */}
+      <motion.div
+        className="mt-12"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+      >
         <h1 className="text-2xl font-bold mb-6">About My Studies</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
-          {/* Education */}
           <div className="bg-[#1e1e1fc4] p-6 rounded-lg shadow-xl/50 outline outline-white/30">
             <div className="flex items-center mb-4">
               <SchoolIcon
@@ -85,8 +119,8 @@ function About() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

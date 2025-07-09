@@ -2,61 +2,28 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="absolute bg-[#282829] outline outline-white/30 top-0 right-0 lg:w-[60%] min-h-[10vh] w-full flex justify-between items-center px-8 rounded-bl-xl uppercase shadow-xl/30">
-      <NavLink
-        to="/about"
-        className={({ isActive }) =>
-          isActive
-            ? "text-amber-300 transition-all duration-100"
-            : "text-white/80 transition-all duration-100"
-        }
-      >
-        About
-      </NavLink>
-
-      <NavLink
-        to="/skill"
-        className={({ isActive }) =>
-          isActive
-            ? "text-amber-300 transition-all duration-100"
-            : "text-white/80 transition-all duration-100"
-        }
-      >
-        Skills
-      </NavLink>
-
-      <NavLink
-        to="/project"
-        className={({ isActive }) =>
-          isActive
-            ? "text-amber-300 transition-all duration-100"
-            : "text-white/80 transition-all duration-100"
-        }
-      >
-        Projects
-      </NavLink>
-
-      <NavLink
-        to="/achieve"
-        className={({ isActive }) =>
-          isActive
-            ? "text-amber-300 transition-all duration-100"
-            : "text-white/80 transition-all duration-100"
-        }
-      >
-        Achieve
-      </NavLink>
-
-      <NavLink
-        to="/contact"
-        className={({ isActive }) =>
-          isActive
-            ? "text-amber-300 transition-all duration-100"
-            : "text-white/80 transition-all duration-100"
-        }
-      >
-        Say Hi!
-      </NavLink>
+    <nav className="lg:absolute lg:top-0 lg:right-0 gap-3 bg-[#282829] outline outline-white/30 lg:w-[60%] lg:min-h-15 w-full flex justify-between items-center px-8 lg:rounded-bl-xl uppercase lg:shadow-xl/30  text-sm flex-wrap h-auto p-5">
+      {["about", "skill", "project", "achieve", "contact"].map((path) => (
+        <NavLink
+          key={path}
+          to={`/${path}`}
+          className={({ isActive }) =>
+            isActive
+              ? "text-amber-300 transition-all duration-100"
+              : "text-white/80 transition-all duration-100"
+          }
+        >
+          {path === "skill"
+            ? "Skills"
+            : path === "project"
+            ? "Projects"
+            : path === "achieve"
+            ? "Achieve"
+            : path === "contact"
+            ? "Say Hi!"
+            : "About"}
+        </NavLink>
+      ))}
     </nav>
   );
 }
