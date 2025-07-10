@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <div className="bg-[#1e1e1fd4] w-full min-h-[100vh] rounded-xl outline outline-white/30 p-6 sm:p-8 text-white pb-16 mb-20 lg:pb-10 overflow-hidden custom-hero">
       <Navbar />
-      <div className="pt-5 lg:pt-0">
+      <div className="lg:pt-0">
         <Routes>
         <Route path="/" element={<About />}></Route>
           <Route path="/about" element={<About />}></Route>

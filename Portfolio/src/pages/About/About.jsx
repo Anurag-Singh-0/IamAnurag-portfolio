@@ -16,33 +16,15 @@ function About() {
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
       {/* Title */}
-      <div className="mb-3">
-        <motion.h1
-          className="text-4xl font-bold relative inline-block after:block after:h-[5px] after:w-full after:bg-amber-300 after:rounded-full after:mt-1"
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.2 }}
-        >
+      <div className="lg:mb-8 mb-7">
+        <h1 className="lg:text-4xl text-3xl font-bold relative inline-block after:block after:h-[5px] after:w-full after:bg-amber-300 after:rounded-full after:mt-1">
           About Me
-        </motion.h1>
-
-        {/* Animated border that adjusts to content width */}
-        <motion.div
-          layout
-          className="border-b-4 rounded-2xl mt-3 border-amber-300"
-          style={{ width: "fit-content" }}
-          transition={{ duration: 0.4 }}
-        />
+        </h1>
       </div>
 
       {/* Bio Section */}
-      <motion.div
-        className="lg:min-h-[27vh] flex flex-col justify-between items-start mb-8"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
-      >
-        <p className="text-[15px] text-white/80">
+      <div className="lg:min-h-[27vh] flex flex-col justify-between items-start mb-8">
+        <p className="text-[15px] text-white/80 mb-5">
           Aspiring Full-Stack Developer skilled in HTML, CSS, JavaScript, React,
           Node.js, Express.js, MongoDB, and SQL. Passionate about web
           development and problem-solving. Currently pursuing a Bachelor of
@@ -53,19 +35,14 @@ function About() {
         <a
           href="/resume.pdf"
           download="Anurag_Singh_Resume.pdf"
-          className="mt-4 bg-amber-300 text-black px-6 py-2 rounded-md hover:bg-amber-400 transition-colors shadow-xl/50"
+          className="mt-4 bg-amber-300 text-black px-6 py-2 rounded-md hover:bg-amber-400 transition-colors shadow-xl/50 custom-resume-btn"
         >
           View Resume
         </a>
-      </motion.div>
+      </div>
 
       {/* Card Section */}
-      <motion.div
-        className="mb-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
-      >
+      <div className="mb-10">
         <h1 className="text-2xl font-bold mb-6">What I'm Doing, Right Now</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -85,15 +62,10 @@ function About() {
             desc="I love clicking photos and capturing everyday moments in a creative way. Photography helps me see the beauty in little things and share my perspective with others"
           />
         </div>
-      </motion.div>
+      </div>
 
       {/* Education Section */}
-      <motion.div
-        className="mt-12"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-      >
+      <div className="mt-12">
         <h1 className="text-2xl font-bold mb-6">About My Studies</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
@@ -119,7 +91,7 @@ function About() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 }

@@ -21,6 +21,7 @@ import tailwind from "./assets/skillIcons/tailwind.png";
 import bootstap from "./assets/skillIcons/bootstap.png";
 import vscode from "./assets/skillIcons/vscode.png";
 import vercel from "./assets/skillIcons/Vercel.png";
+import hand from "./assets/skillIcons/hand.png";
 
 // Achievements images
 
@@ -43,6 +44,7 @@ export const images = {
   bootstap,
   vscode,
   vercel,
+  hand,
 };
 
 export default images;

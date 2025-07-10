@@ -158,24 +158,35 @@ const Sidebar = () => {
             <a
               target="__blank"
               href="https://www.instagram.com/anurag.singh_04"
+              className="hover:text-amber-300 duration-200"
             >
               <InstagramIcon />
             </a>
             <a
               target="__blank"
               href="https://www.linkedin.com/in/singhanurag2024/"
+              className="hover:text-amber-300 duration-200"
             >
               <LinkedInIcon />
             </a>
-            <a target="__blank" href="https://github.com/Anurag-Singh-0">
+            <a
+              target="__blank"
+              href="https://github.com/Anurag-Singh-0"
+              className="hover:text-amber-300 duration-200"
+            >
               <GitHubIcon />
             </a>
-            <a target="__blank" href="https://x.com/Anurag_singh_09">
+            <a
+              target="__blank"
+              href="https://x.com/Anurag_singh_09"
+              className="hover:text-amber-300 duration-200"
+            >
               <XIcon />
             </a>
             <a
               target="__blank"
               href=" https://pixabay.com/users/only_realclicks-51200075/"
+              className="hover:text-amber-300 duration-200"
             >
               <CameraAltIcon />
             </a>

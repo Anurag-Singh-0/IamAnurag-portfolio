@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="lg:outline lg:outline-white/30 lg:rounded-bl-xl lg:font-semibold">
+    <nav className="lg:outline lg:outline-white/30 lg:rounded-bl-xl lg:font-semibold lg:shadow-xl/30">
       {["about", "skill", "project", "achieve", "contact"].map((path) => (
         <NavLink
           key={path}
@@ -21,7 +21,7 @@ function Navbar() {
             : path === "achieve"
             ? "Achieve"
             : path === "contact"
-            ? "Say Hi"
+            ? "Say Hi 👋"
             : "About"}
         </NavLink>
       ))}
