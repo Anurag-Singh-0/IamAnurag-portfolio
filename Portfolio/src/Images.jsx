@@ -17,6 +17,10 @@ import sql from "./assets/skillIcons/sql.png";
 import gsap from "./assets/skillIcons/gsap.png";
 import java from "./assets/skillIcons/java.png";
 import materialUi from "./assets/skillIcons/materialUi.png";
+import tailwind from "./assets/skillIcons/tailwind.png";
+import bootstap from "./assets/skillIcons/bootstap.png";
+import vscode from "./assets/skillIcons/vscode.png";
+import vercel from "./assets/skillIcons/Vercel.png";
 
 // Achievements images
 
@@ -35,6 +39,10 @@ export const images = {
   gsap,
   java,
   materialUi,
+  tailwind,
+  bootstap,
+  vscode,
+  vercel,
 };
 
 export default images;

@@ -1,5 +1,5 @@
 import images from "../Images.js";
-export const frontendSkillsData = [
+const frontendSkillsData = [
   {
     name: "HTML",
     image: `${images.html}`,
@@ -41,7 +41,8 @@ export const frontendSkillsData = [
     alt: "Redux",
   },
 ];
-export const backendSkillsData = [
+
+const backendSkillsData = [
   {
     name: "NodeJs",
     image: `${images.nodejs}`,
@@ -64,7 +65,7 @@ export const backendSkillsData = [
   },
 ];
 
-export const programmingLangSkillsData = [
+const programmingLangSkillsData = [
   {
     name: "Javascript",
     image: `${images.js}`,
@@ -77,3 +78,9 @@ export const programmingLangSkillsData = [
     alt: "Java",
   },
 ];
+
+export default {
+  frontendSkillsData,
+  backendSkillsData,
+  programmingLangSkillsData,
+};

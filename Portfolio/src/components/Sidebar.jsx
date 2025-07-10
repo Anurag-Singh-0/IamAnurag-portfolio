@@ -40,18 +40,22 @@ const Sidebar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex flex-col items-center gap-2 profile">
-            <img
-              src="/Favicon.jpg"
-              alt="Avatar"
-              className="rounded-full mb-4 w-40 h-40 object-cover object-center border-4 border-white/20 shadow-lg"
-            />
-            <h1 className="font-bold uppercase text-2xl sm:text-3xl mb-2 text-center">
-              Anurag Singh
-            </h1>
-            <p className="bg-[#2B2B2C] px-4 py-1.5 text-sm rounded-full shadow-lg text-gray-300 font-medium">
-              Full Stack Developer
-            </p>
+          <div className="flex flex-col items-center gap-2 profile custom-profile">
+            <div>
+              <img
+                src="/Favicon.jpg"
+                alt="Avatar"
+                className="rounded-full mb-4 w-40 h-40 object-cover object-center border-4 border-white/20 shadow-lg"
+              />
+            </div>
+            <div>
+              <h1 className="font-bold uppercase text-2xl sm:text-3xl mb-2 text-center">
+                Anurag Singh
+              </h1>
+              <p className="bg-[#2B2B2C] px-4 py-1.5 text-sm rounded-full shadow-lg text-gray-300 font-medium text-center">
+                Full Stack Developer
+              </p>
+            </div>
           </div>
         </motion.div>
 
@@ -84,6 +88,7 @@ const Sidebar = () => {
                 label: "Email",
                 value: (
                   <a
+                    target="__blank"
                     href="mailto:singh.anurag2026@gmail.com"
                     className="text-[13px] text-white/90 whitespace-nowrap overflow-hidden text-ellipsis max-w-[180px]"
                   >
@@ -150,66 +155,30 @@ const Sidebar = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            {[
-              InstagramIcon,
-              LinkedInIcon,
-              XIcon,
-              GitHubIcon,
-              CameraAltIcon,
-            ].map(
-              (Icon, i) => (
-                (
-                  <a
-                    href="https://www.instagram.com/anurag.singh_04"
-                    target="__blank"
-                    key={i}
-                    className="hover:text-amber-300 duration-300"
-                  >
-                    <Icon />
-                  </a>
-                ),
-                (
-                  <a
-                    href="https://www.linkedin.com/in/singhanurag2024/"
-                    target="__blank"
-                    key={i}
-                    className="hover:text-amber-300 duration-300"
-                  >
-                    <Icon />
-                  </a>
-                ),
-                (
-                  <a
-                    href="https://x.com/Anurag_singh_09"
-                    target="__blank"
-                    key={i}
-                    className="hover:text-amber-300 duration-300"
-                  >
-                    <Icon />
-                  </a>
-                ),
-                (
-                  <a
-                    href="https://github.com/Anurag-Singh-0"
-                    target="__blank"
-                    key={i}
-                    className="hover:text-amber-300 duration-300"
-                  >
-                    <Icon />
-                  </a>
-                ),
-                (
-                  <a
-                    href=" https://pixabay.com/users/only_realclicks-51200075/"
-                    target="__blank"
-                    key={i}
-                    className="hover:text-amber-300 duration-300"
-                  >
-                    <Icon />
-                  </a>
-                )
-              )
-            )}
+            <a
+              target="__blank"
+              href="https://www.instagram.com/anurag.singh_04"
+            >
+              <InstagramIcon />
+            </a>
+            <a
+              target="__blank"
+              href="https://www.linkedin.com/in/singhanurag2024/"
+            >
+              <LinkedInIcon />
+            </a>
+            <a target="__blank" href="https://github.com/Anurag-Singh-0">
+              <GitHubIcon />
+            </a>
+            <a target="__blank" href="https://x.com/Anurag_singh_09">
+              <XIcon />
+            </a>
+            <a
+              target="__blank"
+              href=" https://pixabay.com/users/only_realclicks-51200075/"
+            >
+              <CameraAltIcon />
+            </a>
           </motion.div>
         </motion.div>
       </div>
