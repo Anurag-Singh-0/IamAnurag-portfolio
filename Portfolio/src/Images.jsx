@@ -23,6 +23,15 @@ import vscode from "./assets/skillIcons/vscode.png";
 import vercel from "./assets/skillIcons/Vercel.png";
 import hand from "./assets/skillIcons/hand.png";
 
+/* Proejcts Images */
+
+// HomeScape Full Stack Project images
+import homescape1 from "./assets/project-images/homepage-Laptop.png";
+import homescape2 from "./assets/project-images/homepage-iPad.png";
+import homescape3 from "./assets/project-images/homepage-iPhone-14.png";
+import homescape4 from "./assets/project-images/signup-macbook.png";
+import homescape5 from "./assets/project-images/login.png";
+
 // Achievements images
 
 export const images = {
@@ -45,6 +54,11 @@ export const images = {
   vscode,
   vercel,
   hand,
+  homescape1,
+  homescape2,
+  homescape3,
+  homescape4,
+  homescape5,
 };
 
 export default images;

@@ -12,10 +12,10 @@ const Hero = () => {
       <Navbar />
       <div className="lg:pt-0">
         <Routes>
-        <Route path="/" element={<About />}></Route>
+          <Route path="/" element={<About />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/skill" element={<Skill />}></Route>
-          <Route path="/project" element={<Project />}></Route>
+          <Route path="/project/*" element={<Project />}></Route>
           <Route path="/achieve" element={<Achieve />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
         </Routes>
