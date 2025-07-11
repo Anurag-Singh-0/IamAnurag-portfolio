@@ -31,7 +31,7 @@ function ProjectModal({ isOpen, onClose, project }) {
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.2 }}
         className="bg-black/40 backdrop-blur-[80px] custom-dialog rounded-2xl outline outline-white/20 text-white relative w-full max-w-[1000px] max-h-[90vh] overflow-hidden"
       >
         <div className="overflow-y-auto max-h-[80vh] custom-scroll">
@@ -81,7 +81,7 @@ function ProjectModal({ isOpen, onClose, project }) {
           </div>
 
           {/* Description */}
-          <div className="p-6 text-lg text-white/80 whitespace-pre-wrap">
+          <div className="p-6 text-lg text-white/80 whitespace-pre-wrap pro-desc">
             {project.desc}
           </div>
         </div>

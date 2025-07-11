@@ -46,8 +46,8 @@ body::-webkit-scrollbar-thumb {
     flex-wrap: wrap;
     gap: 5;
     padding: 0 2rem;
-    background: rgba(255, 255, 255, 0.01);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.133);
+    backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(10px); /* Safari support */
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 30px 30px 0 0;
@@ -72,11 +72,16 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     overflow: hidden;
     position: relative;
+    margin-bottom: 2rem;
   }
 
   .closeBtn {
     padding: 5px;
     top: 5%;
+  }
+
+  .pro-desc {
+    font-size: 12px;
   }
 }
 
@@ -119,6 +124,11 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     overflow: hidden;
     position: relative;
+    margin-bottom: 3rem;
+  }
+
+  .pro-desc {
+    font-size: 14px;
   }
 }
 
@@ -157,6 +167,7 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     overflow: hidden;
     position: relative;
+    margin-bottom: 3rem;
   }
 }
 
@@ -188,6 +199,7 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     overflow: hidden;
     position: relative;
+    margin-bottom: 3rem;
   }
 }
 
