@@ -32,6 +32,20 @@ import homescape3 from "./assets/project-images/homepage-iPhone-14.png";
 import homescape4 from "./assets/project-images/signup-macbook.png";
 import homescape5 from "./assets/project-images/login.png";
 
+// React Password Generator
+import rpgLaptop from "./assets/project-images/laptop.png";
+import rpgMobile from "./assets/project-images/mobile.png";
+
+//QR code generator
+import qrcodeLaptop from "./assets/project-images/qrcodelaptop.png";
+import qrcodeMobile from "./assets/project-images/qrcodemobile.png";
+import qrcodeIPad from "./assets/project-images/qrcodeipad.png";
+
+//Age Calculator
+import agelaptop from "./assets/project-images/ageLaptop.png";
+import ageipad from "./assets/project-images/ageipad.png";
+import agemobile from "./assets/project-images/agemobile.png";
+
 // Achievements images
 
 export const images = {
@@ -59,6 +73,14 @@ export const images = {
   homescape3,
   homescape4,
   homescape5,
+  rpgLaptop,
+  rpgMobile,
+  qrcodeLaptop,
+  qrcodeIPad,
+  qrcodeMobile,
+  agelaptop,
+  ageipad,
+  agemobile,
 };
 
 export default images;

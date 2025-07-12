@@ -38,18 +38,18 @@ function ProjectModal({ isOpen, onClose, project }) {
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-white hover:text-[red] duration-200 outline outline-white/30 z-200 p-3 rounded-full closeBtn"
+            className="absolute top-4 right-4 text-white hover:text-[red] duration-200 outline outline-white/30 z-900 p-3 rounded-full closeBtn"
           >
             <CloseIcon />
           </button>
 
           {/* Title */}
-          <h1 className="lg:text-[2.2rem] text-[2rem] font-extrabold text-center py-4 bg-[#0c0c0c]/15 backdrop-blur-[40px] sticky top-0 left-0 z-80">
+          <h1 className="lg:text-[2.2rem] text-[2rem] font-extrabold text-center py-4 bg-[#0c0c0c]/15 backdrop-blur-[40px] sticky top-0 left-0 z-80 proM-title">
             {project.title}
           </h1>
 
           {/* Image Slider */}
-          <div className="proModel-imgBox relative flex justify-center items-center">
+          <div className="proModel-imgBox relative flex justify-center items-center mb-5">
             {/* Arrows */}
             <button
               onClick={prevImage}
@@ -77,7 +77,7 @@ function ProjectModal({ isOpen, onClose, project }) {
           </div>
 
           <div className="pl-5">
-            <SocialHandle />
+            <SocialHandle project={project}/>
           </div>
 
           {/* Description */}

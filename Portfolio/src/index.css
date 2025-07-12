@@ -46,11 +46,15 @@ body::-webkit-scrollbar-thumb {
     flex-wrap: wrap;
     gap: 5;
     padding: 0 2rem;
-    background: rgba(255, 255, 255, 0.133);
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px); /* Safari support */
-    border: 1px solid rgba(255, 255, 255, 0.098);
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 30px 30px 0 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 0 0px 0px rgba(255, 255, 255, 0);
   }
 
   #custom-navlink {
@@ -77,11 +81,19 @@ body::-webkit-scrollbar-thumb {
 
   .closeBtn {
     padding: 5px;
-    top: 5%;
+    top: 1rem;
   }
 
   .pro-desc {
     font-size: 12px;
+  }
+
+  .proM-title{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
 }
 
@@ -99,10 +111,14 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     padding: 0 5rem;
     background: rgba(255, 255, 255, 0.01);
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px); /* Safari support */
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 30px 30px 0 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 0 0px 0px rgba(255, 255, 255, 0);
   }
 
   #custom-navlink {
@@ -146,10 +162,14 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     padding: 0 5rem;
     background: rgba(255, 255, 255, 0.01);
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px); /* Safari support */
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 30px 30px 0 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 0 0px 0px rgba(255, 255, 255, 0);
   }
 
   .custom-resume-btn {
@@ -187,7 +207,6 @@ body::-webkit-scrollbar-thumb {
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
-    
   }
 
   .custom-dialog {

@@ -1,7 +1,9 @@
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import SocialHandle from "./SocialHandle";
 
-function ProjectCard({ img, title, desc, alt, onMore }) {
+function ProjectCard({ img, title, desc, alt, onMore, live, repo, video }) {
+  const project = { live, repo, video };
+
   return (
     <div className="bg-[#222224] outline outline-white/20 rounded-xl p-4 w-full shadow-xl">
       {/* Project Image */}
@@ -21,7 +23,8 @@ function ProjectCard({ img, title, desc, alt, onMore }) {
 
       {/* Project View action btns */}
       <div className="flex items-center gap-5 mt-4">
-        <SocialHandle />
+        {/* ✅ Pass project object to SocialHandle */}
+        <SocialHandle project={project} />
 
         {onMore && (
           <button
