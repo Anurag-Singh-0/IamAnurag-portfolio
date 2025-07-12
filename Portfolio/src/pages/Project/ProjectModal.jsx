@@ -81,7 +81,7 @@ function ProjectModal({ isOpen, onClose, project }) {
           </div>
 
           {/* Description */}
-          <div className="p-6 text-lg text-white/80 whitespace-pre-wrap pro-desc">
+          <div className="p-6 lg:text-lg text-[2.5vw] text-white/80 whitespace-pre-wrap pro-desc">
             {project.desc}
           </div>
         </div>

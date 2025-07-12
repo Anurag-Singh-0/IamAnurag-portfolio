@@ -46,6 +46,11 @@ import agelaptop from "./assets/project-images/ageLaptop.png";
 import ageipad from "./assets/project-images/ageipad.png";
 import agemobile from "./assets/project-images/agemobile.png";
 
+//Old Portfolio
+import oldportfolioLaptop from "./assets/project-images/oldportfolio-laptop.png";
+import oldportfolioipad from "./assets/project-images/oldportfolio-ipad.png";
+import oldportfoliomobile from "./assets/project-images/oldportfolio-iphone.png";
+
 // Achievements images
 
 export const images = {
@@ -81,6 +86,9 @@ export const images = {
   agelaptop,
   ageipad,
   agemobile,
+  oldportfolioLaptop,
+  oldportfolioipad,
+  oldportfoliomobile,
 };
 
 export default images;

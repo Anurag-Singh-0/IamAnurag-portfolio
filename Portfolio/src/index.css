@@ -83,17 +83,16 @@ body::-webkit-scrollbar-thumb {
     padding: 5px;
     top: 1rem;
   }
-
+/* 
   .pro-desc {
     font-size: 12px;
-  }
+  } */
 
-  .proM-title{
-    font-size: 1.5rem;
+  .proM-title {
+    font-size: 4vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
   }
 }
 
@@ -142,9 +141,16 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     margin-bottom: 3rem;
   }
-
+/* 
   .pro-desc {
     font-size: 14px;
+  } */
+
+  .proM-title {
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
