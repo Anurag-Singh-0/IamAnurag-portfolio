@@ -33,7 +33,7 @@ function About() {
           and expand my skills in a professional setting.
         </p>
         <a
-          href="/resume.pdf"
+          href="/Anurag_Singh_FullStack_Resume.pdf"
           download="Anurag_Singh_Resume.pdf"
           className="mt-4 bg-amber-300 text-black px-6 py-2 rounded-md hover:bg-amber-400 transition-colors shadow-xl/50 custom-resume-btn"
         >
