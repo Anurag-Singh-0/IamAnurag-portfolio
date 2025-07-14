@@ -1,5 +1,6 @@
 //Images Section
 import AnuragImg from "./assets/images/anurag-img.jpg";
+import model from "./assets/images/Model.jpg";
 
 //Project images
 
@@ -54,6 +55,7 @@ import oldportfoliomobile from "./assets/project-images/oldportfolio-iphone.png"
 // Achievements images
 
 export const images = {
+  model,
   AnuragImg,
   html,
   css,

@@ -43,7 +43,7 @@ const Sidebar = () => {
           <div className="flex flex-col items-center gap-2 profile custom-profile">
             <div>
               <img
-                src="/Favicon.jpg"
+                src={images.model}
                 alt="Avatar"
                 className="rounded-full mb-4 w-40 h-40 object-cover object-center border-4 border-white/20 shadow-lg"
               />
