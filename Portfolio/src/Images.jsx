@@ -23,6 +23,8 @@ import bootstap from "./assets/skillIcons/bootstap.png";
 import vscode from "./assets/skillIcons/vscode.png";
 import vercel from "./assets/skillIcons/Vercel.png";
 import hand from "./assets/skillIcons/hand.png";
+import postman from "./assets/skillIcons/postman.png"
+import netlify from "./assets/skillIcons/netlify.png"
 
 /* Proejcts Images */
 
@@ -69,6 +71,8 @@ export const images = {
   sql,
   gsap,
   java,
+  postman,
+  netlify,
   materialUi,
   tailwind,
   bootstap,

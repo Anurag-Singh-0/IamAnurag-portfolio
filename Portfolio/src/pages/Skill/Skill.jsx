@@ -4,8 +4,8 @@ import Skillbox from "./Skillbox";
 import images from "../../Images";
 
 const skills = [
-  { name: "Frontend Development", level: "80%" },
-  { name: "Backend Development", level: "40%" },
+  { name: "Frontend Development", level: "90%" },
+  { name: "Backend Development", level: "60%" },
   { name: "Core Subjects - OS, CN", level: "10%" },
   { name: "Problem Solving / DSA", level: "5%" },
 ];
@@ -94,9 +94,11 @@ function Skill() {
           Others
         </h1>
         <div className="flex justify-center flex-wrap gap-8 items-center">
-          <Skillbox name={"GitHub"} alt={"GitHub"} img={images.github} />
           <Skillbox name={"VS Code"} alt={"VS Code"} img={images.vscode} />
+          <Skillbox name={"GitHub"} alt={"GitHub"} img={images.github} />
+          <Skillbox name={"Postman"} alt={"postman"} img={images.postman} />
           <Skillbox name={"Vercel"} alt={"vercel"} img={images.vercel} />
+          <Skillbox name={"Netlify"} alt={"netlify"} img={images.netlify} />
         </div>
       </div>
     </motion.div>
