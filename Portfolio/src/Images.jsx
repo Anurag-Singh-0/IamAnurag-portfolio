@@ -1,6 +1,8 @@
 //Images Section
 import AnuragImg from "./assets/images/anurag-img.jpg";
 import model from "./assets/images/Model.jpg";
+import model2 from "./assets/images/model2.jpg"
+import model3 from "./assets/images/model3.png"
 
 //Project images
 
@@ -59,6 +61,8 @@ import oldportfoliomobile from "./assets/project-images/oldportfolio-iphone.png"
 export const images = {
   model,
   AnuragImg,
+  model2,
+  model3,
   html,
   css,
   js,
