@@ -49,10 +49,10 @@ const Sidebar = () => {
               />
             </div>
             <div className="text-center lg:text-left">
-              <h1 className="font-bold text-2xl sm:text-2xl mb-3">
+              <h1 className="font-bold text-xl md:text-2xl mb-3">
                 Anurag Singh
               </h1>
-              <p className="bg-[#2B2B2C] px-4 py-1.5 text-[0.8rem] rounded-full shadow-lg text-gray-300 font-medium inline-block">
+              <p className="bg-[#2B2B2C] px-4 py-1.5 text-[0.6rem] md:text-[0.8rem] rounded-full shadow-lg text-gray-300 font-medium inline-block">
                 Full Stack Developer
               </p>
             </div>
