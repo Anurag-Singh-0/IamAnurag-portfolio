@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import About from "../pages/About/About";
 import Skill from "../pages/Skill/Skill";
 import Project from "../pages/Project/Project";
@@ -12,7 +12,7 @@ const Hero = () => {
       <Navbar />
       <div className="lg:pt-0">
         <Routes>
-          <Route path="/" element={<About />}></Route>
+          <Route path="/" element={<Navigate to="/about" replace />} />
           <Route path="/about" element={<About />}></Route>
           <Route path="/skill" element={<Skill />}></Route>
           <Route path="/project/*" element={<Project />}></Route>

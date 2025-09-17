@@ -83,8 +83,8 @@ function About() {
             <div className="space-y-6">
               {educationData.map((edu) => (
                 <div key={edu.id}>
-                  <h3 className="font-medium mb-1">{edu.title}</h3>
-                  <p className="text-sm text-gray-400">{edu.collage}</p>
+                  <h3 className="font-medium mb-3 lg:mb-2">{edu.title}</h3>
+                  <p className="text-sm text-gray-400 mb-2">{edu.collage}</p>
                   <div className="flex flex-wrap gap-x-4 mt-1 text-sm text-gray-400">
                     <span>Period • {edu.period}</span>
                   </div>
