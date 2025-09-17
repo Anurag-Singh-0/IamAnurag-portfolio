@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 import SocialHandle from "./SocialHandle";
 
 function ProjectModal({ isOpen, onClose, project }) {
@@ -44,7 +44,7 @@ function ProjectModal({ isOpen, onClose, project }) {
           </button>
 
           {/* Title */}
-          <h1 className="lg:text-[2.2rem] text-[2rem] font-extrabold text-center py-4 bg-[#0c0c0c]/15 backdrop-blur-[40px] sticky top-0 left-0 z-80 proM-title">
+          <h1 className="lg:text-[2.2rem] text-[2rem] font-extrabold text-center py-4 bg-[#0c0c0c]/70 backdrop-blur-[80px] sticky top-0 left-0 z-80 profile-model-title">
             {project.title}
           </h1>
 
@@ -77,11 +77,11 @@ function ProjectModal({ isOpen, onClose, project }) {
           </div>
 
           <div className="pl-5">
-            <SocialHandle project={project}/>
+            <SocialHandle project={project} />
           </div>
 
           {/* Description */}
-          <div className="p-6 lg:text-lg text-[2.5vw] text-white/80 whitespace-pre-wrap pro-desc">
+          <div className="p-6 text-[1rem] lg:text-lg md:text-lg text-white/80 whitespace-pre-wrap pro-desc">
             {project.desc}
           </div>
         </div>

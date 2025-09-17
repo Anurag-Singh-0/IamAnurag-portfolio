@@ -25,12 +25,14 @@ function About() {
       {/* Bio Section */}
       <div className="lg:min-h-[27vh] flex flex-col justify-between items-start mb-8">
         <p className="text-[15px] text-white/80 mb-5">
-          Aspiring Full-Stack Developer skilled in HTML, CSS, JavaScript, React,
-          Node.js, Express.js, MongoDB, and SQL. Passionate about web
-          development and problem-solving. Currently pursuing a Bachelor of
-          Computer Applications in Data Science and Artificial Intelligence at
-          Babu Banarasi Das University, Lucknow. Seeking opportunities to apply
-          and expand my skills in a professional setting.
+          Results-driven MERN Stack Developer with hands-on experience in
+          designing and developing scalable, responsive, and user-centric web
+          applications. Proficient in React.js, Node.js, Express.js, and MongoDB
+          with strong knowledge of RESTful APIs, authentication, and deployment.
+          Skilled at solving problems, writing clean and maintainable code, and
+          collaborating within Agile teams, currently pursuing a BCA in Data
+          Science & Artificial Intelligence (2023–2026) and seeking an
+          opportunity to contribute to impactful software development projects.
         </p>
         <a
           href="/Anurag_Singh_MERN_Developer_Resume.pdf"
@@ -43,7 +45,7 @@ function About() {
 
       {/* Card Section */}
       <div className="mb-10">
-        <h1 className="text-2xl font-bold mb-6">What I'm Doing, Right Now</h1>
+        <h1 className="text-2xl font-bold mb-6">What I'm Doing,</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <Card

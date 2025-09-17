@@ -23,20 +23,8 @@ function ProjectCard({ img, title, desc, alt, onMore, live, repo, video }) {
 
       {/* Project View action btns */}
       <div className="flex items-center gap-5 mt-4">
-        {/* ✅ Pass project object to SocialHandle */}
-        <SocialHandle project={project} />
-
-        {onMore && (
-          <button
-            onClick={onMore}
-            className="px-2 py-2 bg-[#212123] text-white/50 outline outline-white/20 rounded-lg hover:text-amber-400 duration-200 group relative overflow-hidden"
-          >
-            <MoreHorizIcon className="scale-80" />
-            <span className="text-white absolute text-[9px] left-[10px] bottom-[-12px] group-hover:bottom-0 transition-all duration-200">
-              More
-            </span>
-          </button>
-        )}
+        {/* Pass project object to SocialHandle */}
+        <SocialHandle project={project} onMore={onMore}/>
       </div>
     </div>
   );

@@ -36,7 +36,7 @@ body::-webkit-scrollbar-thumb {
   nav {
     width: 100%;
     height: 10vh;
-    position:fixed;
+    position: fixed;
     bottom: 0;
     right: 0;
     z-index: 55;
@@ -54,7 +54,7 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
       inset 0 1px 0 rgba(255, 255, 255, 0.5),
       inset 0 -1px 0 rgba(255, 255, 255, 0.1),
-      inset 0 0 0px 0px rgba(255, 255, 255, 0); 
+      inset 0 0 0px 0px rgba(255, 255, 255, 0);
   }
 
   .custom-navlink {
@@ -64,11 +64,6 @@ body::-webkit-scrollbar-thumb {
   .custom-resume-btn {
     width: 100%;
     text-align: center;
-  }
-
-  .custom-dialog {
-    min-height: 90vh;
-    width: 90vw;
   }
 
   .proModel-imgBox {
@@ -81,14 +76,14 @@ body::-webkit-scrollbar-thumb {
 
   .closeBtn {
     padding: 5px;
-    top: 1rem;
+    top: 0.5rem;
   }
-/* 
+  /* 
   .pro-desc {
     font-size: 12px;
   } */
 
-  .proM-title {
+  .profile-model-title {
     font-size: 4vw;
     display: flex;
     justify-content: center;
@@ -129,11 +124,6 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
   }
 
-  .custom-dialog {
-    min-height: 90vh;
-    width: 90vw;
-  }
-
   .proModel-imgBox {
     height: 60vh;
     width: 100%;
@@ -141,12 +131,12 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     margin-bottom: 3rem;
   }
-/* 
+  /* 
   .pro-desc {
     font-size: 14px;
   } */
 
-  .proM-title {
+  .profile-model-title {
     font-size: 4vw;
     display: flex;
     justify-content: center;
@@ -177,7 +167,7 @@ body::-webkit-scrollbar-thumb {
       inset 0 -1px 0 rgba(255, 255, 255, 0.1),
       inset 0 0 0px 0px rgba(255, 255, 255, 0);
 
-      font-size: 1.8rem;
+    font-size: 1.8rem;
   }
 
   .custom-resume-btn {
@@ -185,10 +175,10 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
   }
 
-  .custom-dialog {
+  /* .custom-dialog {
     min-height: 90vh;
     width: 90vw;
-  }
+  } */
 
   .proModel-imgBox {
     height: 60vh;

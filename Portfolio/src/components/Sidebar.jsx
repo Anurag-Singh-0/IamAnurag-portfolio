@@ -21,9 +21,9 @@ const Sidebar = () => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div className="bg-[#1e1e1f9d] w-full rounded-xl outline outline-white/30 text-[#FAFAFA] h-auto">
+    <div className="bg-[#1e1e1f9d] w-full rounded-xl outline outline-white/30 text-[#FAFAFA] h-auto relative">
       {/* Mobile Toggle Button */}
-      <div className="flex lg:hidden justify-end mb-4">
+      <div className="lg:hidden  mb-4 inline-block absolute right-0">
         <button
           onClick={() => setShowDetails(!showDetails)}
           className="outline outline-white/30 px-2 py-2 shadow transition duration-200 rounded-bl-xl rounded-tr-xl"
@@ -32,27 +32,27 @@ const Sidebar = () => {
         </button>
       </div>
 
-      <div className="h-auto max-h-[calc(100vh-10px)] overflow-y-auto px-6 sm:px-10 py-10 hide-scrollbar">
+      <div className="overflow-y-auto px-6 sm:px-10 py-10 hide-scrollbar">
         {/* Profile section */}
         <motion.div
-          className="relative mb-8"
+          className="relative mb-3 lg:mb-5"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex flex-col items-center gap-2 profile custom-profile">
-            <div>
+          <div className="flex lg:flex-col lg:justify-center items-center flex-row gap-5">
+            <div className="flex-shrink-0">
               <img
                 src={images.model3}
                 alt="Avatar"
-                className="rounded-full mb-4 w-40 h-40 object-cover object-center border-4 border-white/20 shadow-lg"
+                className="rounded-full mb-4 lg:mb-0 w-25 h-25 md:w-34 md:h-34 lg:w-34 lg:h-34 object-cover object-center border-4 border-white/20 shadow-lg"
               />
             </div>
-            <div>
-              <h1 className="font-bold uppercase text-2xl sm:text-3xl mb-2 text-center">
+            <div className="text-center lg:text-left">
+              <h1 className="font-bold text-2xl sm:text-2xl mb-3">
                 Anurag Singh
               </h1>
-              <p className="bg-[#2B2B2C] px-4 py-1.5 text-sm rounded-full shadow-lg text-gray-300 font-medium text-center">
+              <p className="bg-[#2B2B2C] px-4 py-1.5 text-[0.8rem] rounded-full shadow-lg text-gray-300 font-medium inline-block">
                 Full Stack Developer
               </p>
             </div>
