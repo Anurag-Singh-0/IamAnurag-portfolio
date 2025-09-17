@@ -76,12 +76,12 @@ function ProjectModal({ isOpen, onClose, project }) {
             />
           </div>
 
-          <div className="pl-5">
+          <div className="pl-5 mb-7">
             <SocialHandle project={project} />
           </div>
 
           {/* Description */}
-          <div className="p-6 text-[1rem] lg:text-lg md:text-lg text-white/80 whitespace-pre-wrap pro-desc">
+          <div className="px-9 py-4 text-[14.4px] lg:text-lg md:text-lg text-white/80 whitespace-pre-line pro-desc">
             {project.desc}
           </div>
         </div>

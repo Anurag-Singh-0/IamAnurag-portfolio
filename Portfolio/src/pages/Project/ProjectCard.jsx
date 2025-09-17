@@ -17,7 +17,7 @@ function ProjectCard({ img, title, desc, alt, onMore, live, repo, video }) {
 
       {/* Title & Description*/}
       <div>
-        <h1 className="lg:text-3xl text-[5vw] font-extrabold mb-2">{title}</h1>
+        <h1 className="lg:text-2xl text-[5vw] font-extrabold mb-2 whitespace-pre">{title}</h1>
         <p className="line-clamp-2 text-sm text-white/70">{desc}</p>
       </div>
 
