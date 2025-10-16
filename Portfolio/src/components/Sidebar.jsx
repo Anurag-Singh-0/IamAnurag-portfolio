@@ -104,7 +104,7 @@ const Sidebar = () => {
                     href="tel:7678936521"
                     className="text-[13px] text-white/90"
                   >
-                    +91 7********1
+                    +91 76******21
                   </a>
                 ),
               },

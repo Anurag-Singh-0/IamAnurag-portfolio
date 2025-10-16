@@ -6,6 +6,7 @@ import ProjectModal from "./ProjectModal";
 
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import ComingSoon from "../../components/ComingSoon";
 
 function Project() {
   const [selectedFilter, setSelectedFilter] = useState("All");
@@ -121,6 +122,8 @@ function Project() {
         onClose={() => setIsModalOpen(false)}
         project={selectedProject}
       />
+
+      <ComingSoon />
     </motion.div>
   );
 }
