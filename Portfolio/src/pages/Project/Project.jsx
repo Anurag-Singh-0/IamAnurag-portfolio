@@ -95,25 +95,42 @@ function Project() {
       {/* Project Container */}
       <div className="mt-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {projectData.map((project, idx) =>
+            project.status === "coming soon" ? (
+              <ComingSoon
+                key={idx}
+                title={project.title}
+                desc={project.desc}
+                image={project.images[0]}
+              />
+            ) : (
+              ""
+            )
+          )}
+
           {projectData
             .filter((project) =>
               selectedFilter === "All"
                 ? true
                 : project.category === selectedFilter
             )
-            .map((project, idx) => (
-              <ProjectCard
-                key={idx}
-                img={project.images[0]}
-                alt={project.alt}
-                title={project.title}
-                desc={project.desc}
-                live={project.live}
-                repo={project.repo}
-                video={project.video}
-                onMore={() => handleMoreClick(project)}
-              />
-            ))}
+            .map((project, idx) =>
+              project.status === "complete" ? (
+                <ProjectCard
+                  key={idx}
+                  img={project.images[0]}
+                  alt={project.alt}
+                  title={project.title}
+                  desc={project.desc}
+                  live={project.live}
+                  repo={project.repo}
+                  video={project.video}
+                  onMore={() => handleMoreClick(project)}
+                />
+              ) : (
+                ""
+              )
+            )}
         </div>
       </div>
 
@@ -122,8 +139,6 @@ function Project() {
         onClose={() => setIsModalOpen(false)}
         project={selectedProject}
       />
-
-      <ComingSoon />
     </motion.div>
   );
 }

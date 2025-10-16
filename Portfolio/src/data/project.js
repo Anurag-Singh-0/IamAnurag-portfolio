@@ -52,6 +52,7 @@ const projectData = [
     Database: MongoDB Atlas with Mongoose
     Authentication: Passport.js with Local Strategy
     Middlewares Used: express-session, connect-flash, connect-mongo, passport, passport-local, method-override, dotenv (for environment variable management), Custom error handling (ExpressError)`,
+    status: "complete",
   },
 
   //Front-End Projects
@@ -73,6 +74,7 @@ const projectData = [
       Option to include special characters
       One-click copy to clipboard
       Built entirely with React and modern hooks`,
+      status: "complete",
   },
 
   {
@@ -97,6 +99,7 @@ const projectData = [
     QR image appears instantly with smooth transition
     Fully responsive for mobile and tablet devices
     Input validation with shake animation for empty input`,
+    status: "complete",
   },
 
   {
@@ -128,6 +131,7 @@ const projectData = [
     HTML – For the structure of the app
     CSS – For styling (you can customize it)
     JavaScript – For date calculations and interactivity`,
+    status: "complete",
   },
 
   {
@@ -144,7 +148,18 @@ const projectData = [
     video: "https://youtu.be/SbVmJ8quCWU?si=hEJULxVIlm6FTKSJ",
     alt: "Old Portfolio",
     desc: `It's my old portfolio, if you have time check this out,`,
+    status: "complete",
   },
+
+  {
+    title: "FuryLand - e commerce",
+    category: "Full-stack projects",
+    images: images.oldportfolioLaptop,
+    alt: "FuryLand",
+    desc: `It's my old portfolio, if you have time check this out,`,
+    status: "coming soon",
+  },
+
 ];
 
 export default projectData;
