@@ -74,7 +74,7 @@ const projectData = [
       Option to include special characters
       One-click copy to clipboard
       Built entirely with React and modern hooks`,
-      status: "complete",
+    status: "complete",
   },
 
   {
@@ -154,12 +154,13 @@ const projectData = [
   {
     title: "FuryLand - e commerce",
     category: "Full-stack projects",
-    images: images.oldportfolioLaptop,
+    images: [images.oldportfolioLaptop],
     alt: "FuryLand",
-    desc: `It's my old portfolio, if you have time check this out,`,
+    desc: `FuryLand – Full-Stack E-Commerce Website (MERN Stack)
+FuryLand is a fully functional e-commerce web application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It provides a seamless online shopping experience with secure user authentication, an intuitive admin dashboard, and multiple payment integrations.
+`,
     status: "coming soon",
   },
-
 ];
 
 export default projectData;
