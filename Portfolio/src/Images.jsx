@@ -1,8 +1,8 @@
 //Images Section
 import AnuragImg from "./assets/images/anurag-img.jpg";
 import model from "./assets/images/Model.jpg";
-import model2 from "./assets/images/model2.jpg"
-import model3 from "./assets/images/model3.png"
+import model2 from "./assets/images/model2.jpg";
+import model3 from "./assets/images/model3.png";
 
 //Project images
 
@@ -25,8 +25,8 @@ import bootstap from "./assets/skillIcons/bootstap.png";
 import vscode from "./assets/skillIcons/vscode.png";
 import vercel from "./assets/skillIcons/Vercel.png";
 import hand from "./assets/skillIcons/hand.png";
-import postman from "./assets/skillIcons/postman.png"
-import netlify from "./assets/skillIcons/netlify.png"
+import postman from "./assets/skillIcons/postman.png";
+import netlify from "./assets/skillIcons/netlify.png";
 
 /* Proejcts Images */
 
@@ -55,6 +55,9 @@ import agemobile from "./assets/project-images/agemobile.png";
 import oldportfolioLaptop from "./assets/project-images/oldportfolio-laptop.png";
 import oldportfolioipad from "./assets/project-images/oldportfolio-ipad.png";
 import oldportfoliomobile from "./assets/project-images/oldportfolio-iphone.png";
+
+//FuryLand - E - commerce
+import furylandFrontPage from "./assets/project-images/FuryLand-frontpage.png";
 
 // Achievements images
 
@@ -99,6 +102,7 @@ export const images = {
   oldportfolioLaptop,
   oldportfolioipad,
   oldportfoliomobile,
+  furylandFrontPage,
 };
 
 export default images;

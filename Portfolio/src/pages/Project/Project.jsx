@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import projectData from "../../data/project";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
+import images from "../../Images";
 
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -101,7 +102,7 @@ function Project() {
                 key={idx}
                 title={project.title}
                 desc={project.desc}
-                image={project.images[0]}
+                image={images.furylandFrontPage}
               />
             ) : (
               ""
