@@ -28,6 +28,7 @@ function Project() {
     setIsModalOpen(true);
   };
 
+  //Filter Section
   const categories = ["All", "Front-end projects", "Full-stack projects"];
 
   return (
