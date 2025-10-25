@@ -28,7 +28,7 @@ function Project() {
     setIsModalOpen(true);
   };
 
-  const categories = ["All", "Full-stack projects", "Front-end projects"];
+  const categories = ["All", "Front-end projects", "Full-stack projects"];
 
   return (
     <motion.div
