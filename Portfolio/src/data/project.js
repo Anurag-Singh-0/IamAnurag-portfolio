@@ -1,12 +1,12 @@
 import images from "../Images";
 
-// "All", "Full-stack projects", "Front-end projects"
+// "All", "Full-stack", "Frontend"
 
 const projectData = [
-  //Full-Stack Projects
+  //Full-stack
   {
     title: "HomeScape",
-    category: "Full-stack projects",
+    category: "Full-stack",
     images: [
       images.homescape1,
       images.homescape2,
@@ -55,10 +55,10 @@ const projectData = [
     status: "complete",
   },
 
-  //Front-End Projects
+  //Frontend
   {
     title: "React Password Generator",
-    category: "Front-end projects",
+    category: "Frontend",
     images: [images.rpgLaptop, images.rpgMobile, images.rpgLaptop],
     live: "https://react-password-generator01.netlify.app/",
     repo: "https://github.com/Anurag-Singh-0/React-password-generator",
@@ -79,7 +79,7 @@ const projectData = [
 
   {
     title: "QR Code Generator",
-    category: "Front-end projects",
+    category: "Frontend",
     images: [
       images.qrcodeLaptop,
       images.qrcodeLaptop,
@@ -104,7 +104,7 @@ const projectData = [
 
   {
     title: "Age Calculator",
-    category: "Front-end projects",
+    category: "Frontend",
     images: [
       images.agelaptop,
       images.agelaptop,
@@ -136,7 +136,7 @@ const projectData = [
 
   {
     title: "Old Portfolio",
-    category: "Front-end projects",
+    category: "Frontend",
     images: [
       images.oldportfolioLaptop,
       images.oldportfolioLaptop,
@@ -153,7 +153,7 @@ const projectData = [
 
   {
     title: "FuryLand - e commerce",
-    category: "Full-stack projects",
+    category: "Full-stack",
     images: [images.oldportfolioLaptop],
     alt: "FuryLand",
     desc: `FuryLand – Full-Stack E-Commerce Website (MERN Stack)

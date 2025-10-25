@@ -29,7 +29,7 @@ function Project() {
   };
 
   //Filter Section
-  const categories = ["All", "Front-end", "Full-stack"];
+  const categories = ["All", "Frontend", "Full-stack"];
 
   return (
     <motion.div
