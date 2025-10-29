@@ -100,12 +100,7 @@ const Sidebar = () => {
                 icon: <SmartphoneOutlinedIcon className={iconStyle} />,
                 label: "Phone",
                 value: (
-                  <a
-                    href="tel:7678936521"
-                    className="text-[13px] text-white/90"
-                  >
-                    +91 76******21
-                  </a>
+                  <a className="text-[13px] text-white/90">+91 76******21</a>
                 ),
               },
               {
