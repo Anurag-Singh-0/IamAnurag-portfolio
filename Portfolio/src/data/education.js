@@ -5,6 +5,8 @@ const educationData = [
       "Bachelor of Computer Applications in Data Science and Artificial Intelligence",
     period: "2023 - 2026",
     collage: "Babu Banarasi Das University, Lucknow",
+    grade: "Pursuing",
+    
   },
 ];
 

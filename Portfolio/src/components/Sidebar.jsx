@@ -1,19 +1,11 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import { images } from "../Images";
 
-// Material Icons
-import MarkunreadOutlinedIcon from "@mui/icons-material/MarkunreadOutlined";
-import SmartphoneOutlinedIcon from "@mui/icons-material/SmartphoneOutlined";
-import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
-import RoomOutlinedIcon from "@mui/icons-material/RoomOutlined";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import XIcon from "@mui/icons-material/X";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import CameraAltIcon from "@mui/icons-material/CameraAlt";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+// React Icons (Font Awesome + Feather)
+import { FaEnvelope, FaPhone, FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaGithub, FaTwitter, FaCamera } from "react-icons/fa";
+import { FiChevronUp, FiChevronDown } from "react-icons/fi";
 
 const iconStyle = "text-amber-300 text-[28px]";
 
@@ -21,38 +13,39 @@ const Sidebar = () => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div className="bg-[#1e1e1f9d] w-full rounded-xl outline outline-white/30 text-[#FAFAFA] h-auto relative">
-      {/* Mobile Toggle Button */}
-      <div className="lg:hidden  mb-4 inline-block absolute right-0">
+    <div className="bg-[#1e1e1f9d] w-full rounded-xl outline outline-white/30 text-[#FAFAFA] h-auto relative overflow-hidden">
+      
+      {/* Mobile Toggle Button - Exact right-0 top-0 edge */}
+      <div className="lg:hidden absolute top-0 right-0 z-30">
         <button
           onClick={() => setShowDetails(!showDetails)}
-          className="outline outline-white/30 px-2 py-2 shadow transition duration-200 rounded-bl-xl rounded-tr-xl"
+          className="outline-l outline-b outline-white/30 px-3.5 py-2.5 shadow-md transition duration-200 rounded-bl-2xl bg-[#2B2B2C] cursor-pointer text-white hover:text-amber-300 flex items-center justify-center"
         >
-          {showDetails ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+          {showDetails ? <FiChevronUp className="text-[20px]" /> : <FiChevronDown className="text-[20px]" />}
         </button>
       </div>
 
-      <div className="overflow-y-auto px-6 sm:px-10 py-10 hide-scrollbar">
+      <div className="overflow-y-auto px-5 sm:px-10 py-4 sm:py-8 hide-scrollbar">
         {/* Profile section */}
         <motion.div
-          className="relative mb-3 lg:mb-5"
+          className="relative mb-2 lg:mb-5 pr-16 lg:pr-0"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex lg:flex-col lg:justify-center items-center flex-row gap-5">
+          <div className="flex lg:flex-col lg:justify-center items-center flex-row gap-4 sm:gap-5">
             <div className="flex-shrink-0">
               <img
                 src={images.model3}
                 alt="Avatar"
-                className="rounded-full mb-4 lg:mb-0 w-25 h-25 md:w-34 md:h-34 lg:w-34 lg:h-34 object-cover object-center border-4 border-white/20 shadow-lg"
+                className="rounded-2xl lg:mb-0 w-20 h-20 md:w-34 md:h-34 lg:w-34 lg:h-34 object-cover object-center border-4 border-white/20 shadow-lg"
               />
             </div>
-            <div className="text-center lg:text-left">
-              <h1 className="font-bold text-xl md:text-2xl mb-3">
+            <div className="text-center lg:text-center">
+              <h1 className="font-bold text-lg sm:text-xl md:text-2xl mb-1.5 sm:mb-2 whitespace-nowrap tracking-tight">
                 Anurag Singh
               </h1>
-              <p className="bg-[#2B2B2C] px-4 py-1.5 text-[0.6rem] md:text-[0.8rem] rounded-full shadow-lg text-gray-300 font-medium inline-block">
+              <p className="bg-[#2B2B2C] px-3.5 py-1 text-[0.65rem] sm:text-xs rounded-full shadow-lg text-gray-300 font-medium inline-block whitespace-nowrap outline outline-white/10">
                 Full Stack Developer
               </p>
             </div>
@@ -68,11 +61,11 @@ const Sidebar = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          <hr className="w-full border-white/20 mb-6" />
+          <hr className="w-full border-white/20 my-4 lg:mb-6" />
 
           {/* Contact Info */}
           <motion.div
-            className="flex flex-col gap-8 mb-7"
+            className="flex flex-col gap-6 lg:gap-8 mb-6 lg:mb-7"
             initial="hidden"
             animate="visible"
             variants={{
@@ -84,11 +77,12 @@ const Sidebar = () => {
           >
             {[
               {
-                icon: <MarkunreadOutlinedIcon className={iconStyle} />,
+                icon: <FaEnvelope className={iconStyle} />,
                 label: "Email",
                 value: (
                   <a
-                    target="__blank"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href="mailto:singh.anurag2026@gmail.com"
                     className="text-[13px] text-white/90 whitespace-nowrap overflow-hidden text-ellipsis max-w-[180px]"
                   >
@@ -97,14 +91,14 @@ const Sidebar = () => {
                 ),
               },
               {
-                icon: <SmartphoneOutlinedIcon className={iconStyle} />,
+                icon: <FaPhone className={iconStyle} />,
                 label: "Phone",
                 value: (
-                  <a className="text-[13px] text-white/90">+91 76******21</a>
+                  <span className="text-[13px] text-white/90">+91 76******21</span>
                 ),
               },
               {
-                icon: <CalendarMonthOutlinedIcon className={iconStyle} />,
+                icon: <FaCalendarAlt className={iconStyle} />,
                 label: "Birthday",
                 value: (
                   <span className="text-[13px] text-white/90 uppercase">
@@ -113,7 +107,7 @@ const Sidebar = () => {
                 ),
               },
               {
-                icon: <RoomOutlinedIcon className={iconStyle} />,
+                icon: <FaMapMarkerAlt className={iconStyle} />,
                 label: "Location",
                 value: (
                   <span className="text-[13px] text-white/90">
@@ -151,39 +145,44 @@ const Sidebar = () => {
             transition={{ delay: 0.6 }}
           >
             <a
-              target="__blank"
+              target="_blank"
+              rel="noopener noreferrer"
               href="https://www.instagram.com/anurag.singh_04"
               className="hover:text-amber-300 duration-200"
             >
-              <InstagramIcon />
+              <FaInstagram className="text-[28px]" />
             </a>
             <a
-              target="__blank"
+              target="_blank"
+              rel="noopener noreferrer"
               href="https://www.linkedin.com/in/singhanurag2024/"
               className="hover:text-amber-300 duration-200"
             >
-              <LinkedInIcon />
+              <FaLinkedin className="text-[28px]" />
             </a>
             <a
-              target="__blank"
+              target="_blank"
+              rel="noopener noreferrer"
               href="https://github.com/Anurag-Singh-0"
               className="hover:text-amber-300 duration-200"
             >
-              <GitHubIcon />
+              <FaGithub className="text-[28px]" />
             </a>
             <a
-              target="__blank"
+              target="_blank"
+              rel="noopener noreferrer"
               href="https://x.com/Anurag_singh_09"
               className="hover:text-amber-300 duration-200"
             >
-              <XIcon />
+              <FaTwitter className="text-[28px]" />
             </a>
             <a
-              target="__blank"
-              href=" https://pixabay.com/users/only_realclicks-51200075/"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://pixabay.com/users/only_realclicks-51200075/"
               className="hover:text-amber-300 duration-200"
             >
-              <CameraAltIcon />
+              <FaCamera className="text-[28px]" />
             </a>
           </motion.div>
         </motion.div>

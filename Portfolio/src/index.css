@@ -5,7 +5,9 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Hide scrollbar across devices */
+/* =========================================
+   Global Scrollbar Styling
+========================================= */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -15,9 +17,8 @@
   scrollbar-width: none;
 }
 
-/* Custom Scrollbar for body */
 body::-webkit-scrollbar {
-  width: 10px; /* slightly thick */
+  width: 10px;
   background: transparent;
 }
 
@@ -31,245 +32,28 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
-/* Extra Small (XS) - Phones (up to 575.98px) */
-@media (max-width: 575.98px) {
-  nav {
-    width: 100%;
-    height: 10vh;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 55;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 5;
-    padding: 0 2rem;
-    background: rgba(255, 255, 255, 0.01);
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 30px 30px 0 0;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.5),
-      inset 0 -1px 0 rgba(255, 255, 255, 0.1),
-      inset 0 0 0px 0px rgba(255, 255, 255, 0);
-  }
-
-  .custom-navlink {
-    font-size: 4vw;
-  }
-
-  .custom-resume-btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .proModel-imgBox {
-    height: auto;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 2rem;
-  }
-
-  .closeBtn {
-    padding: 5px;
-    top: 0.5rem;
-  }
-  /* 
-  .pro-desc {
-    font-size: 12px;
-  } */
-
-  .profile-model-title {
-    font-size: 4vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+/* =========================================
+   Custom App Layout Classes
+========================================= */
+.custom-hero {
+  position: relative;
 }
 
-/* Small (SM) - Large phones and small tablets (576px - 767.98px) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-  nav {
-    width: 100%;
-    height: 10vh;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 55;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5rem;
-    background: rgba(255, 255, 255, 0.01);
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 30px 30px 0 0;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.5),
-      inset 0 -1px 0 rgba(255, 255, 255, 0.1),
-      inset 0 0 0px 0px rgba(255, 255, 255, 0);
-  }
-
-  .custom-navlink {
-    font-size: 1rem;
-  }
-
-  .custom-resume-btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .proModel-imgBox {
-    height: 60vh;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 3rem;
-  }
-  /* 
-  .pro-desc {
-    font-size: 14px;
-  } */
-
-  .profile-model-title {
-    font-size: 4vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.custom-resume-btn {
+  width: 100%;
+  text-align: center;
 }
 
-/* Medium (MD) - Tablets (768px - 991.98px) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  nav {
-    width: 100%;
-    height: 10vh;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 55;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5rem;
-    background: rgba(255, 255, 255, 0.01);
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 30px 30px 0 0;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.5),
-      inset 0 -1px 0 rgba(255, 255, 255, 0.1),
-      inset 0 0 0px 0px rgba(255, 255, 255, 0);
-
-    font-size: 1.8rem;
-  }
-
-  .custom-resume-btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* .custom-dialog {
-    min-height: 90vh;
-    width: 90vw;
-  } */
-
-  .proModel-imgBox {
-    height: 60vh;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 3rem;
-  }
+/* Custom Scrollbar for inner containers (like modals or sidebars if needed) */
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
 }
 
-/* Large (LG) - Small laptops and desktops (992px - 1199.98px) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  .custom-hero {
-    position: relative;
-  }
-
-  nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60%;
-    height: 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-  }
-
-  .custom-dialog {
-    min-height: 85vh;
-    width: 80vw;
-  }
-
-  .proModel-imgBox {
-    height: 60vh;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 3rem;
-  }
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
 }
 
-/* Extra Large (XL) - Large desktops (1200px - 1399.98px) */
-@media (min-width: 1200px) and (max-width: 1399.98px) {
-  .custom-hero {
-    position: relative;
-  }
-
-  nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60%;
-    height: 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1.5rem;
-  }
-
-  .custom-navlink {
-    transition: all ease 0.2s;
-  }
-
-  .custom-navlink:hover {
-    opacity: 0.7;
-  }
-
-  .custom-dialog {
-    min-height: 85vh;
-    width: 70vw;
-  }
-
-  .proModel-imgBox {
-    height: 60vh;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-  }
-
-  /* custom-scroll */
-  .custom-scroll::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  .custom-scroll::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-  }
-
-  .custom-scroll::-webkit-scrollbar-track {
-    background: transparent;
-  }
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
 }
