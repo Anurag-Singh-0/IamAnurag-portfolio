@@ -141,7 +141,7 @@ function Contact() {
                 <input
                   type="text"
                   name="name"
-                  placeholder="Abhay"
+                  placeholder="name"
                   className="bg-[#151515] outline outline-white/10 focus:outline-amber-300/50 rounded-xl p-4 w-full text-white placeholder:text-white/20 transition-all text-sm"
                   required
                 />
@@ -151,7 +151,7 @@ function Contact() {
                 <input
                   type="email"
                   name="email"
-                  placeholder="abhay@example.com"
+                  placeholder="name@example.com"
                   className="bg-[#151515] outline outline-white/10 focus:outline-amber-300/50 rounded-xl p-4 w-full text-white placeholder:text-white/20 transition-all text-sm"
                   required
                 />

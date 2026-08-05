@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { fetchAbout } from "../services/api";
-import Card from "../components/Card";
-import { Laptop, Lightbulb, Camera, School, FileText } from "lucide-react";
+import {
+  Laptop, Code, Database, Lightbulb, Camera, Video, Globe,
+  FileText, Briefcase, MapPin, Calendar, School, Award
+} from "lucide-react";
 
 function About() {
   const [aboutData, setAboutData] = useState(null);
@@ -15,9 +17,7 @@ function About() {
   const fetchAboutData = async () => {
     try {
       const response = await fetchAbout();
-      if (response.data) {
-        setAboutData(response.data);
-      }
+      if (response.data) setAboutData(response.data);
     } catch (error) {
       console.error("Error fetching about:", error);
     } finally {
@@ -25,11 +25,24 @@ function About() {
     }
   };
 
+  const getIcon = (iconName) => {
+    const iconClass = "text-amber-300 w-7 h-7";
+    switch (iconName) {
+      case 'Code': return <Code className={iconClass} />;
+      case 'Database': return <Database className={iconClass} />;
+      case 'Lightbulb': return <Lightbulb className={iconClass} />;
+      case 'Camera': return <Camera className={iconClass} />;
+      case 'Video': return <Video className={iconClass} />;
+      case 'Globe': return <Globe className={iconClass} />;
+      default: return <Laptop className={iconClass} />;
+    }
+  };
+
   if (loading) {
     return (
       <div className="text-white text-center py-20 flex flex-col items-center justify-center">
         <div className="inline-block animate-spin rounded-full h-10 w-10 border-4 border-amber-300 border-t-transparent"></div>
-        <p className="mt-4 text-white/60 font-medium tracking-wide">Loading about info...</p>
+        <p className="mt-4 text-white/60 font-medium tracking-wide">Loading Profile...</p>
       </div>
     );
   }
@@ -39,7 +52,7 @@ function About() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="max-w-6xl mx-auto"
+      className="max-w-5xl mx-auto pb-10"
     >
       {/* Header with Subtitle */}
       <div className="mb-12 text-center sm:text-left flex flex-col sm:flex-row sm:items-end justify-between gap-6">
@@ -53,71 +66,135 @@ function About() {
         </div>
       </div>
 
-      {/* Bio & Resume Section */}
-      <div className="bg-[#222224] outline outline-white/20 rounded-3xl p-6 sm:p-10 mb-12">
-        <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8">
-          {aboutData?.bio || "No bio added yet. Please update from admin panel."}
+      {/* 1. Bio & Resume Section (The Hero) */}
+      <div className="bg-[#18181a] border border-white/10 rounded-3xl p-8 sm:p-10 mb-14 shadow-xl">
+        <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-8 font-medium whitespace-pre-wrap">
+          {aboutData?.bio || "Passionate Full-Stack Developer shaping ideas into scalable applications."}
         </p>
-        
+
         {aboutData?.resumeLink && (
           <a
             href={aboutData.resumeLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-amber-300 text-black font-bold px-8 py-3.5 rounded-xl hover:bg-amber-400 transition-colors duration-200 shadow-md w-full sm:w-auto justify-center"
+            className="inline-flex items-center gap-2.5 bg-amber-300 text-black font-extrabold px-8 py-4 rounded-xl hover:bg-amber-400 transition-all duration-300 shadow-[0_0_20px_rgba(253,224,71,0.2)] hover:shadow-[0_0_30px_rgba(253,224,71,0.4)] w-full sm:w-auto justify-center"
           >
             <FileText className="w-5 h-5" /> View Resume
           </a>
         )}
       </div>
 
-      {/* What I'm Doing Section */}
-      <div className="mb-12">
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">What I'm Doing</h2>
+      {/* 2. Experience Section */}
+      {aboutData?.experience && aboutData.experience.length > 0 && (
+        <div className="mb-14">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-8 flex items-center gap-3">
+            <Briefcase className="text-amber-300 w-8 h-8" /> Experience
+          </h2>
+          <div className="space-y-6">
+            {aboutData.experience.map((exp, idx) => (
+              <div key={idx} className="bg-[#0f0e0e] border border-white/10 hover:border-amber-300/30 rounded-2xl p-6 sm:p-8 transition-colors group">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card
-            icon={<Laptop className="text-amber-300 w-8 h-8" />}
-            title="Web Development"
-            desc="Building full-stack projects with HTML, CSS, JavaScript, React.js, Node.js, Express.js, and MongoDB."
-          />
-          <Card
-            icon={<Lightbulb className="text-amber-300 w-8 h-8" />}
-            title="Data Structures & Algorithms"
-            desc="Practicing DSA using Java to sharpen my problem-solving skills and build a robust foundation for engineering roles."
-          />
-          <Card
-            icon={<Camera className="text-amber-300 w-8 h-8" />}
-            title="Capturing the Moment"
-            desc="I love clicking photos and capturing everyday moments. Photography helps me see the beauty in details and share my creative perspective."
-          />
-        </div>
-      </div>
+                  {/* Left Side: Role & Company */}
+                  <div className="flex-1">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1.5 leading-snug transition-colors">
+                      {exp.role}
+                    </h3>
+                    <p className="text-amber-300/90 font-medium text-sm sm:text-base">
+                      {exp.company}
+                    </p>
+                  </div>
 
-      {/* Education Section */}
-      <div className="mt-12">
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Education</h2>
+                  {/* Right Side: Period & Location (Badges) */}
+                  <div className="flex flex-col gap-2 shrink-0 md:text-right mt-2 md:mt-0">
+                    <span className="flex items-center gap-2 text-white/50 text-xs sm:text-sm font-medium bg-white/5 px-3 py-1.5 rounded-lg w-fit md:ml-auto">
+                      <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> {exp.period}
+                    </span>
+                    {exp.location && (
+                      <span className="flex items-center gap-2 text-white/70 text-xs sm:text-sm font-medium w-fit md:ml-auto">
+                        <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> {exp.location}
+                      </span>
+                    )}
+                  </div>
 
-        <div className="bg-[#141415] outline outline-white/20 rounded-3xl p-6 sm:p-8">
-          <div className="flex items-center gap-4 mb-6 pb-4 border-b border-white/10">
-            <div className="p-3 bg-amber-300/10 rounded-2xl outline outline-amber-300/20">
-              <School className="text-amber-300 w-6 h-6" />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-white">Babu Banarasi Das University</h3>
-              <p className="text-sm text-white/50">Lucknow, Uttar Pradesh</p>
-            </div>
-          </div>
+                </div>
 
-          <div className="space-y-2">
-            <h4 className="text-lg font-semibold text-white">Bachelor of Computer Applications (BCA) - Data Science & AI</h4>
-            <p className="text-sm text-amber-300 font-medium">Final Year Student</p>
-            <div className="flex flex-wrap gap-x-4 mt-2 text-sm text-white/60 bg-[#080808] p-3 rounded-xl w-fit outline outline-white/5">
-              <span>Period: 2023 – 2026</span>
-            </div>
+                {/* Description */}
+                <p className="text-white/70 leading-relaxed text-sm sm:text-base mt-2">
+                  {exp.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      )}
+
+      {/* 3. Education Section */}
+      {aboutData?.education && aboutData.education.length > 0 && (
+        <div className="mb-14">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-8 flex items-center gap-3">
+            <School className="text-amber-300 w-8 h-8" /> Education
+          </h2>
+
+          <div className="flex flex-col gap-6">
+            {aboutData.education.map((edu, idx) => (
+              <div key={idx} className="bg-[#0f0e0e] border border-white/10 hover:border-amber-300/30 rounded-2xl p-6 sm:p-8 transition-colors group">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+
+                  {/* Left Side: Degree & Institution */}
+                  <div className="flex-1">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1.5 leading-snug transition-colors">
+                      {edu.degree}
+                    </h3>
+                    <p className="text-amber-300/90 font-medium text-sm sm:text-base">
+                      {edu.institution}
+                    </p>
+                  </div>
+
+                  {/* Right Side: Period & Status (Badges) */}
+                  <div className="flex flex-col gap-2 shrink-0 md:text-right mt-2 md:mt-0">
+                    <span className="flex items-center gap-2 text-white/50 text-xs sm:text-sm font-medium bg-white/5 px-3 py-1.5 rounded-lg w-fit md:ml-auto">
+                      <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> {edu.period}
+                    </span>
+                    {edu.status && (
+                      <span className="flex items-center gap-2 text-white/90 text-xs sm:text-sm font-medium w-fit md:ml-auto">
+                        <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-300" /> {edu.status}
+                      </span>
+                    )}
+                  </div>
+
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* 4. What I'm Doing Section */}
+      {aboutData?.whatImDoing && aboutData.whatImDoing.length > 0 && (
+        <div className="mb-10">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-8">What I'm Doing</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {aboutData.whatImDoing.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-[#0f0e0e] border border-white/5 hover:border-amber-300/30 hover:bg-[#0a0a0b] rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row gap-5 transition-all duration-300"
+              >
+                <div className="w-14 h-14 bg-white/5 rounded-2xl border border-white/10 shrink-0 flex items-center justify-center shadow-inner">
+                  {getIcon(item.icon)}
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                  <p className="text-white/50 text-[15px] leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
     </motion.div>
   );
 }

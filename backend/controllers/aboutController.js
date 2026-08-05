@@ -5,7 +5,14 @@ export const getAbout = async (req, res) => {
   try {
     const about = await About.findOne();
     if (!about) {
-      return res.status(404).json({ message: 'About not found' });
+      // Return empty structure instead of 404 error
+      return res.json({ 
+        bio: "", 
+        resumeLink: "", 
+        experience: [], 
+        education: [], 
+        whatImDoing: [] 
+      });
     }
     res.json(about);
   } catch (error) {
@@ -27,14 +34,12 @@ export const createAbout = async (req, res) => {
 // Update about
 export const updateAbout = async (req, res) => {
   try {
+    // Added { upsert: true } so it creates the document if it doesn't exist
     const about = await About.findOneAndUpdate(
       {},
       req.body,
-      { new: true, runValidators: true }
+      { new: true, runValidators: true, upsert: true, setDefaultsOnInsert: true }
     );
-    if (!about) {
-      return res.status(404).json({ message: 'About not found' });
-    }
     res.json(about);
   } catch (error) {
     res.status(500).json({ message: error.message });

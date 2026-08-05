@@ -2,20 +2,31 @@ import mongoose from "mongoose";
 
 const aboutSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
-    title: { type: String, required: true },
     bio: { type: String, required: true },
-    profileImage: { type: String, required: true },
-    resumeLink: { type: String, required: true },
-    socialLinks: {
-      github: String,
-      linkedin: String,
-      twitter: String,
-      instagram: String,
-      youtube: String,
-    },
+    resumeLink: { type: String, required: true }, // Stores the uploaded PDF URL
+    
+    
+    experience: [{
+      company: String,
+      role: String,
+      period: String,
+      location: String,
+      description: String
+    }],
+    education: [{
+      institution: String,
+      degree: String,
+      period: String,
+      location: String,
+      status: String
+    }],
+    whatImDoing: [{
+      title: String,
+      description: String,
+      icon: String 
+    }],
   },
-  { timestamps: true },
+  { timestamps: true }
 );
 
 const About = mongoose.model("About", aboutSchema);
