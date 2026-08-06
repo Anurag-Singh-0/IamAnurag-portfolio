@@ -13,8 +13,9 @@ const Sidebar = () => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div className="bg-[#1e1e1f9d] w-full rounded-xl outline outline-white/30 text-[#FAFAFA] h-auto relative overflow-hidden">
-      
+    <div className="bg-[#1e1e1f9d] w-full rounded-xl outline outline-white/30 text-[#FAFAFA] h-auto lg:h-full relative overflow-hidden flex flex-col">
+      {/* ADDED: flex flex-col and lg:h-full so the inner div can take remaining space and scroll */}
+
       {/* Mobile Toggle Button - Exact right-0 top-0 edge */}
       <div className="lg:hidden absolute top-0 right-0 z-30">
         <button
@@ -25,7 +26,7 @@ const Sidebar = () => {
         </button>
       </div>
 
-      <div className="overflow-y-auto px-5 sm:px-10 py-4 sm:py-8 hide-scrollbar">
+      <div className="overflow-y-auto flex-1 px-5 sm:px-10 pt-6 pb-8 sm:py-8 hide-scrollbar">
         {/* Profile section */}
         <motion.div
           className="relative mb-2 lg:mb-5 pr-16 lg:pr-0"
@@ -54,9 +55,8 @@ const Sidebar = () => {
 
         {/* Details section with animation */}
         <motion.div
-          className={`transition-all duration-500 ease-in-out overflow-hidden ${
-            showDetails ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
-          } lg:max-h-none lg:opacity-100 lg:block`}
+          className={`transition-all duration-500 ease-in-out overflow-hidden ${showDetails ? "max-h-[1500px] opacity-100" : "max-h-0 opacity-0"
+            } lg:max-h-none lg:opacity-100 lg:block`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
@@ -94,7 +94,7 @@ const Sidebar = () => {
                 icon: <FaPhone className={iconStyle} />,
                 label: "Phone",
                 value: (
-                  <span className="text-[13px] text-white/90">+91 76******21</span>
+                  <a href='tel:7678936521' className="text-[13px] text-white/90">+91 7678936521</a>
                 ),
               },
               {
@@ -137,9 +137,12 @@ const Sidebar = () => {
             ))}
           </motion.div>
 
-          {/* Social Icons */}
+          {/* Divider Line before Socials */}
+          <hr className="w-full border-white/20 mb-6" />
+
+          {/* Social Icons - Dock Style */}
           <motion.div
-            className="flex justify-between items-center text-white/70"
+            className="flex justify-around items-center text-white/70 bg-white/5 border border-white/10 px-4 py-3.5 rounded-2xl shadow-[0_4px_15px_rgba(0,0,0,0.2)] backdrop-blur-sm mb-4 lg:mb-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
@@ -148,41 +151,41 @@ const Sidebar = () => {
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.instagram.com/anurag.singh_04"
-              className="hover:text-amber-300 duration-200"
+              className="hover:text-amber-300 hover:-translate-y-1 hover:scale-110 transition-all duration-300"
             >
-              <FaInstagram className="text-[28px]" />
+              <FaInstagram className="text-[26px] sm:text-[28px]" />
             </a>
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.linkedin.com/in/singhanurag2024/"
-              className="hover:text-amber-300 duration-200"
+              className="hover:text-amber-300 hover:-translate-y-1 hover:scale-110 transition-all duration-300"
             >
-              <FaLinkedin className="text-[28px]" />
+              <FaLinkedin className="text-[26px] sm:text-[28px]" />
             </a>
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/Anurag-Singh-0"
-              className="hover:text-amber-300 duration-200"
+              className="hover:text-amber-300 hover:-translate-y-1 hover:scale-110 transition-all duration-300"
             >
-              <FaGithub className="text-[28px]" />
+              <FaGithub className="text-[26px] sm:text-[28px]" />
             </a>
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://x.com/Anurag_singh_09"
-              className="hover:text-amber-300 duration-200"
+              className="hover:text-amber-300 hover:-translate-y-1 hover:scale-110 transition-all duration-300"
             >
-              <FaTwitter className="text-[28px]" />
+              <FaTwitter className="text-[26px] sm:text-[28px]" />
             </a>
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://pixabay.com/users/only_realclicks-51200075/"
-              className="hover:text-amber-300 duration-200"
+              className="hover:text-amber-300 hover:-translate-y-1 hover:scale-110 transition-all duration-300"
             >
-              <FaCamera className="text-[28px]" />
+              <FaCamera className="text-[26px] sm:text-[28px]" />
             </a>
           </motion.div>
         </motion.div>

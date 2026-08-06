@@ -62,10 +62,10 @@ function Contact() {
       {/* Header with Subtitle */}
       <div className="mb-12 text-center sm:text-left flex flex-col sm:flex-row sm:items-end justify-between gap-6">
         <div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-3 relative inline-block after:block after:h-[5px] after:w-full after:bg-amber-300 after:rounded-full after:mt-1">
+          <h1 className="text-4xl sm:text-4xl font-extrabold text-white tracking-tight mb-3 relative inline-block after:block after:h-[5px] after:w-full after:bg-amber-300 after:rounded-full after:mt-1">
             Say <span className="text-amber-300">Hi!</span>
           </h1>
-          <p className="text-white/50 text-lg max-w-xl mt-4">
+          <p className="text-white/50 text-md max-w-xl mt-4">
             Feel free to reach out for job openings, collaborations, or a friendly chat!
           </p>
         </div>

@@ -117,10 +117,10 @@ function Achieve() {
       {/* Header with Simple Title */}
       <div className="mb-14 text-center sm:text-left flex flex-col sm:flex-row sm:items-end justify-between gap-6">
         <div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-3 relative inline-block after:block after:h-[5px] after:w-full after:bg-amber-300 after:rounded-full after:mt-1">
+          <h1 className="text-4xl sm:text-4xl font-extrabold text-white tracking-tight mb-3 relative inline-block after:block after:h-[5px] after:w-full after:bg-amber-300 after:rounded-full after:mt-1">
             <span className="text-white">Achievements</span>
           </h1>
-          <p className="text-white/50 text-lg mt-4 max-w-xl leading-relaxed">
+          <p className="text-white/50 text-md mt-4 max-w-xl leading-relaxed">
             My certifications, technical milestones, and professional journey.
           </p>
         </div>

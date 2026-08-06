@@ -63,10 +63,10 @@ function Skill() {
       {/* Header with Subtitle */}
       <div className="mb-12 text-center sm:text-left flex flex-col sm:flex-row sm:items-end justify-between gap-6">
         <div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-3 relative inline-block after:block after:h-[5px] after:w-full after:bg-amber-300 after:rounded-full after:mt-1">
+          <h1 className="text-4xl sm:text-4xl font-extrabold text-white tracking-tight mb-3 relative inline-block after:block after:h-[5px] after:w-full after:bg-amber-300 after:rounded-full after:mt-1">
             Technical <span className="text-amber-300">Skills</span>
           </h1>
-          <p className="text-white/50 text-lg max-w-xl mt-4">
+          <p className="text-white/50 text-md max-w-xl mt-4">
             A comprehensive list of technologies and tools I use to build scalable and robust applications.
           </p>
         </div>
@@ -82,12 +82,12 @@ function Skill() {
           sections.map((section, index) => (
             <div key={index} className="bg-[#151515] p-6 sm:p-8 rounded-3xl outline outline-white/10">
               {/* Section Title */}
-              <h2 className="text-xl sm:text-2xl font-bold uppercase mb-8 text-white/90 tracking-widest border-b border-white/5 pb-4">
+              <h2 className="text-xl sm:text-2xl font-bold uppercase mb-8 text-white/90 tracking-widest border-b border-white/5 pb-4 text-center sm:text-left">
                 {section.title}
               </h2>
 
-              {/* Skillboxes Grid */}
-              <div className="flex flex-wrap gap-5 sm:gap-6 items-center">
+              {/* Skillboxes Grid - FIXED LINE */}
+              <div className="flex flex-wrap gap-5 sm:gap-6 items-center justify-center sm:justify-start">
                 {section.skills.map((skill) => (
                   <Skillbox
                     key={skill._id}

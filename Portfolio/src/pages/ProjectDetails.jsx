@@ -73,7 +73,7 @@ function ProjectDetails() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}
-      className="max-w-5xl mx-auto pb-10"
+      className="max-w-5xl mx-auto pb-10 px-4 sm:px-0"
     >
       {/* Full Screen Image Slider Modal */}
       <AnimatePresence>
@@ -123,78 +123,79 @@ function ProjectDetails() {
       {/* Back Button */}
       <button 
         onClick={() => navigate('/project')} 
-        className="flex items-center gap-2 text-white/60 hover:text-amber-300 transition-colors mb-8 group cursor-pointer w-fit font-medium"
+        className="flex items-center gap-2 text-white/60 hover:text-amber-300 transition-colors mb-6 sm:mb-8 group cursor-pointer w-fit text-sm sm:text-base font-medium"
       >
         <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" /> Back to Portfolio
       </button>
 
       {/* Header Info */}
-      <div className="mb-12">
+      <div className="mb-8 sm:mb-12">
         <div className="mb-4">
-          <span className="inline-block bg-amber-300/10 border border-amber-300/20 text-amber-300 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">
+          <span className="inline-block bg-amber-300/10 border border-amber-300/20 text-amber-300 text-[10px] sm:text-xs font-bold tracking-widest uppercase px-3 py-1 sm:px-4 sm:py-1.5 rounded-full">
             {project.category}
           </span>
         </div>
         
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 tracking-tight">
+        {/* Responsive Title & Description */}
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-4 sm:mb-6 tracking-tight">
           {project.title}
         </h1>
-        <p className="text-xl text-white/60 mb-8 max-w-3xl leading-relaxed">
+        <p className="text-sm sm:text-base text-white/60 mb-6 sm:mb-8 max-w-3xl leading-relaxed">
           {project.description}
         </p>
         
-        {/* Action Links */}
-        <div className="flex flex-wrap gap-4 border-b border-white/10 pb-10">
+        {/* Action Links - 3 in one line on Mobile */}
+        <div className="flex flex-row justify-between sm:justify-start gap-2 sm:gap-4 border-b border-white/10 pb-8 sm:pb-10 w-full">
           {project.liveLink && (
-            <a href={project.liveLink} target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-amber-300 hover:bg-amber-400 text-black font-bold px-8 py-3.5 rounded-xl transition-all shadow-[0_0_15px_rgba(252,211,77,0.2)] hover:-translate-y-1 cursor-pointer">
-              <FaLink /> Live Application
+            <a href={project.liveLink} target="_blank" rel="noreferrer" className="flex-1 sm:flex-none flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-amber-300 hover:bg-amber-400 text-black font-bold p-2 sm:px-8 sm:py-3.5 rounded-lg sm:rounded-xl transition-all shadow-[0_0_15px_rgba(252,211,77,0.2)] hover:-translate-y-1 cursor-pointer text-[10px] sm:text-base text-center leading-tight">
+              <FaLink className="text-sm sm:text-lg" /> <span>Live App</span>
             </a>
           )}
           {project.githubLink && (
-            <a href={project.githubLink} target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-[#1a1a1a] hover:bg-[#222] border border-white/10 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:-translate-y-1 cursor-pointer">
-              <FaGithub className="text-xl" /> Source Code
+            <a href={project.githubLink} target="_blank" rel="noreferrer" className="flex-1 sm:flex-none flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1a1a1a] hover:bg-[#222] border border-white/10 text-white font-semibold p-2 sm:px-8 sm:py-3.5 rounded-lg sm:rounded-xl transition-all hover:-translate-y-1 cursor-pointer text-[10px] sm:text-base text-center leading-tight">
+              <FaGithub className="text-sm sm:text-xl" /> <span>Source Code</span>
             </a>
           )}
           {project.video && (
-            <a href={project.video} target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-[#1a1a1a] hover:bg-[#222] border border-white/10 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:-translate-y-1 cursor-pointer">
-              <FaVideo className="text-red-400 text-xl" /> View Demo
+            <a href={project.video} target="_blank" rel="noreferrer" className="flex-1 sm:flex-none flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 bg-[#1a1a1a] hover:bg-[#222] border border-white/10 text-white font-semibold p-2 sm:px-8 sm:py-3.5 rounded-lg sm:rounded-xl transition-all hover:-translate-y-1 cursor-pointer text-[10px] sm:text-base text-center leading-tight">
+              <FaVideo className="text-red-400 text-sm sm:text-xl" /> <span>View Demo</span>
             </a>
           )}
         </div>
       </div>
 
       {/* Main Hero Thumbnail */}
-      <div className="w-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl mb-16 bg-[#111]">
-        <img src={project.thumbnail} alt={project.title} className="w-full h-auto max-h-[700px] object-cover object-top" />
+      <div className="w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 shadow-2xl mb-12 sm:mb-16 bg-[#111]">
+        <img src={project.thumbnail} alt={project.title} className="w-full h-auto max-h-[400px] sm:max-h-[700px] object-cover object-top" />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 mb-16">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-16 mb-12 sm:mb-16">
         
         {/* Left Col: Deep Dive Details */}
-        <div className="lg:col-span-2 space-y-12">
+        <div className="lg:col-span-2 space-y-10 sm:space-y-12">
           
           {/* Problem */}
           <section>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="bg-red-500/10 p-3 rounded-xl border border-red-500/20">
-                <FaExclamationTriangle className="text-red-400 text-xl" />
+            <div className="flex items-center gap-3 mb-4 sm:mb-6">
+              <div className="bg-red-500/10 p-2 sm:p-3 rounded-lg sm:rounded-xl border border-red-500/20">
+                <FaExclamationTriangle className="text-red-400 text-lg sm:text-xl" />
               </div>
-              <h2 className="text-3xl font-bold text-white tracking-wide">The Problem</h2>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-wide">The Problem</h2>
             </div>
-            <p className="text-white/70 leading-relaxed whitespace-pre-line text-lg bg-[#151515] p-6 md:p-8 rounded-2xl border border-white/5 shadow-inner">
+            <p className="text-white/70 leading-relaxed whitespace-pre-line text-sm sm:text-base md:text-lg bg-[#151515] p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-white/5 shadow-inner">
               {project.problem}
             </p>
           </section>
 
           {/* Solution */}
           <section>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="bg-green-500/10 p-3 rounded-xl border border-green-500/20">
-                <FaLightbulb className="text-green-400 text-xl" />
+            <div className="flex items-center gap-3 mb-4 sm:mb-6">
+              <div className="bg-green-500/10 p-2 sm:p-3 rounded-lg sm:rounded-xl border border-green-500/20">
+                <FaLightbulb className="text-green-400 text-lg sm:text-xl" />
               </div>
-              <h2 className="text-3xl font-bold text-white tracking-wide">The Solution</h2>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-wide">The Solution</h2>
             </div>
-            <p className="text-white/70 leading-relaxed whitespace-pre-line text-lg bg-[#151515] p-6 md:p-8 rounded-2xl border border-white/5 shadow-inner">
+            <p className="text-white/70 leading-relaxed whitespace-pre-line text-sm sm:text-base md:text-lg bg-[#151515] p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-white/5 shadow-inner">
               {project.solution}
             </p>
           </section>
@@ -202,13 +203,13 @@ function ProjectDetails() {
           {/* Challenges Overcome */}
           {project.challenges && (
             <section>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-purple-500/10 p-3 rounded-xl border border-purple-500/20">
-                  <FaTools className="text-purple-400 text-xl" />
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <div className="bg-purple-500/10 p-2 sm:p-3 rounded-lg sm:rounded-xl border border-purple-500/20">
+                  <FaTools className="text-purple-400 text-lg sm:text-xl" />
                 </div>
-                <h2 className="text-3xl font-bold text-white tracking-wide">Technical Challenges</h2>
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-wide">Technical Challenges</h2>
               </div>
-              <p className="text-white/70 leading-relaxed whitespace-pre-line text-lg bg-[#151515] p-6 md:p-8 rounded-2xl border border-white/5 shadow-inner">
+              <p className="text-white/70 leading-relaxed whitespace-pre-line text-sm sm:text-base md:text-lg bg-[#151515] p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-white/5 shadow-inner">
                 {project.challenges}
               </p>
             </section>
@@ -217,13 +218,13 @@ function ProjectDetails() {
           {/* Impact & Results */}
           {project.impact && (
             <section>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-blue-500/10 p-3 rounded-xl border border-blue-500/20">
-                  <FaChartLine className="text-blue-400 text-xl" />
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <div className="bg-blue-500/10 p-2 sm:p-3 rounded-lg sm:rounded-xl border border-blue-500/20">
+                  <FaChartLine className="text-blue-400 text-lg sm:text-xl" />
                 </div>
-                <h2 className="text-3xl font-bold text-white tracking-wide">Impact & Results</h2>
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-wide">Impact & Results</h2>
               </div>
-              <p className="text-white/70 leading-relaxed whitespace-pre-line text-lg bg-[#151515] p-6 md:p-8 rounded-2xl border border-white/5 shadow-inner">
+              <p className="text-white/70 leading-relaxed whitespace-pre-line text-sm sm:text-base md:text-lg bg-[#151515] p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-white/5 shadow-inner">
                 {project.impact}
               </p>
             </section>
@@ -232,16 +233,16 @@ function ProjectDetails() {
           {/* Key Features List */}
           {project.features && project.features.length > 0 && (
             <section>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-amber-300/10 p-3 rounded-xl border border-amber-300/20">
-                  <FaListUl className="text-amber-300 text-xl" />
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <div className="bg-amber-300/10 p-2 sm:p-3 rounded-lg sm:rounded-xl border border-amber-300/20">
+                  <FaListUl className="text-amber-300 text-lg sm:text-xl" />
                 </div>
-                <h2 className="text-3xl font-bold text-white tracking-wide">Key Features</h2>
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-wide">Key Features</h2>
               </div>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                 {project.features.map((feature, idx) => (
-                  <li key={idx} className="bg-[#151515] border border-white/5 p-4 rounded-xl flex items-start gap-3">
-                    <span className="text-amber-300 mt-1">•</span>
+                  <li key={idx} className="bg-[#151515] border border-white/5 p-4 rounded-xl flex items-start gap-3 text-sm sm:text-base">
+                    <span className="text-amber-300 mt-0.5 sm:mt-1">•</span>
                     <span className="text-white/80">{feature}</span>
                   </li>
                 ))}
@@ -253,37 +254,37 @@ function ProjectDetails() {
 
         {/* Right Col: Sticky Information Panel */}
         <div>
-          <div className="bg-[#151515] border border-white/5 rounded-2xl p-6 md:p-8 sticky top-8 shadow-xl">
+          <div className="bg-[#151515] border border-white/5 rounded-2xl p-5 sm:p-6 md:p-8 sticky top-8 shadow-xl">
             
             {/* Role & Timeline Section */}
             {(project.role || project.duration) && (
-              <div className="space-y-6 mb-8 pb-8 border-b border-white/10">
+              <div className="space-y-5 sm:space-y-6 mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-white/10">
                 {project.role && (
                   <div>
-                    <h4 className="text-white/40 text-xs font-bold tracking-widest uppercase mb-2 flex items-center gap-2">
+                    <h4 className="text-white/40 text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-1.5 sm:mb-2 flex items-center gap-2">
                       <FaUserTie /> Role
                     </h4>
-                    <p className="text-white/90 font-medium leading-relaxed">{project.role}</p>
+                    <p className="text-white/90 font-medium leading-relaxed text-sm sm:text-base">{project.role}</p>
                   </div>
                 )}
                 {project.duration && (
                   <div>
-                    <h4 className="text-white/40 text-xs font-bold tracking-widest uppercase mb-2 flex items-center gap-2">
+                    <h4 className="text-white/40 text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-1.5 sm:mb-2 flex items-center gap-2">
                       <FaRegClock /> Timeline
                     </h4>
-                    <p className="text-white/90 font-medium">{project.duration}</p>
+                    <p className="text-white/90 font-medium text-sm sm:text-base">{project.duration}</p>
                   </div>
                 )}
               </div>
             )}
 
             {/* Technologies */}
-            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
               <FaCode className="text-amber-300" /> Technologies
             </h3>
-            <div className="flex flex-wrap gap-2.5">
+            <div className="flex flex-wrap gap-2 sm:gap-2.5">
               {project.techStack?.map((tech, idx) => (
-                <span key={idx} className="bg-[#0d0d0d] border border-white/10 text-white/80 text-sm font-medium px-4 py-2.5 rounded-lg shadow-sm hover:border-amber-300/30 hover:text-amber-300 transition-colors">
+                <span key={idx} className="bg-[#0d0d0d] border border-white/10 text-white/80 text-xs sm:text-sm font-medium px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg shadow-sm hover:border-amber-300/30 hover:text-amber-300 transition-colors">
                   {tech}
                 </span>
               ))}
@@ -294,15 +295,15 @@ function ProjectDetails() {
 
       {/* Flipkart-Style Project Gallery */}
       {project.images && project.images.length > 0 && (
-        <section className="pt-10 border-t border-white/10">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="bg-amber-300/10 p-3 rounded-xl border border-amber-300/20">
-              <FaImages className="text-amber-300 text-xl" />
+        <section className="pt-8 sm:pt-10 border-t border-white/10">
+          <div className="flex items-center gap-3 mb-6 sm:mb-8">
+            <div className="bg-amber-300/10 p-2 sm:p-3 rounded-lg sm:rounded-xl border border-amber-300/20">
+              <FaImages className="text-amber-300 text-lg sm:text-xl" />
             </div>
-            <h2 className="text-3xl font-bold text-white tracking-wide">Project Gallery</h2>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-wide">Project Gallery</h2>
           </div>
           
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-3 sm:gap-4">
             {project.images.slice(0, 5).map((imgUrl, index) => {
               const isLastVisible = index === 4;
               const remainingImagesCount = project.images.length - 5;
@@ -311,7 +312,7 @@ function ProjectDetails() {
                 <div 
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
-                  className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-[#111] rounded-2xl overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:-translate-y-1 hover:shadow-amber-300/20 transition-all duration-300"
+                  className="relative w-[80px] h-[80px] xs:w-24 xs:h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-[#111] rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 cursor-pointer shadow-lg hover:-translate-y-1 hover:shadow-amber-300/20 transition-all duration-300"
                 >
                   <img 
                     src={imgUrl} 
@@ -322,7 +323,7 @@ function ProjectDetails() {
                   {/* +X Overlay on the 5th image if there are more */}
                   {isLastVisible && remainingImagesCount > 0 && (
                     <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px] flex items-center justify-center">
-                      <span className="text-white text-2xl font-bold">+{remainingImagesCount}</span>
+                      <span className="text-white text-lg sm:text-2xl font-bold">+{remainingImagesCount}</span>
                     </div>
                   )}
                 </div>
