@@ -31,6 +31,10 @@ app.use(express.urlencoded({ extended: true }));
 // Connect DB
 connectDB();
 
+app.get("/", (req, res) => {
+  res.send("Portfolio Backend API is running successfully!");
+});
+
 // Routes
 app.use("/api/admin", adminRoutes);
 app.use("/api/about", aboutRoutes);
