@@ -20,10 +20,11 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:3000"],
+    origin: true, 
     credentials: true,
-  }),
+  })
 );
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -37,7 +38,7 @@ app.use("/api/skills", skillRoutes);
 app.use("/api/projects", projectRoutes);
 app.use("/api/achievements", achievementRoutes);
 
-// Image Upload Route
+// Image / PDF Upload Route
 app.post("/api/upload", upload.single("image"), async (req, res) => {
   try {
     if (!req.file) {
@@ -66,3 +67,6 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// MANDATORY FOR VERCEL SERVERLESS FUNCTIONS
+export default app;
