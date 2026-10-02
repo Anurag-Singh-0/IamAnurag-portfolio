@@ -72,6 +72,52 @@ function Contact() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Right Column: Contact Form */}
+        <div className="lg:col-span-2 bg-[#222224] outline outline-white/20 rounded-3xl p-6 sm:p-10 flex flex-col justify-center">
+          <form onSubmit={onSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-semibold uppercase tracking-wider text-white/50">Your Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="name"
+                  className="bg-[#151515] outline outline-white/10 focus:outline-amber-300/50 rounded-xl p-4 w-full text-white placeholder:text-white/20 transition-all text-sm"
+                  required
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-semibold uppercase tracking-wider text-white/50">Your Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="name@example.com"
+                  className="bg-[#151515] outline outline-white/10 focus:outline-amber-300/50 rounded-xl p-4 w-full text-white placeholder:text-white/20 transition-all text-sm"
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label className="text-xs font-semibold uppercase tracking-wider text-white/50">Your Message</label>
+              <textarea
+                name="message"
+                placeholder="Write your message here..."
+                required
+                rows={5}
+                className="bg-[#151515] outline outline-white/10 focus:outline-amber-300/50 rounded-xl p-4 w-full text-white placeholder:text-white/20 transition-all text-sm resize-none"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              className="bg-amber-300 hover:bg-amber-400 text-black font-bold p-4 w-full rounded-xl transition-colors duration-200 cursor-pointer text-base tracking-wide shadow-md"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+
         {/* Left Column: Connect With Me (Socials) */}
         <div className="lg:col-span-1 bg-[#222224] outline outline-white/20 rounded-3xl p-8 flex flex-col justify-between items-center sm:items-start">
           <div className="w-full text-center sm:text-left mb-8">
@@ -132,51 +178,6 @@ function Contact() {
           </div>
         </div>
 
-        {/* Right Column: Contact Form */}
-        <div className="lg:col-span-2 bg-[#222224] outline outline-white/20 rounded-3xl p-6 sm:p-10 flex flex-col justify-center">
-          <form onSubmit={onSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-semibold uppercase tracking-wider text-white/50">Your Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="name"
-                  className="bg-[#151515] outline outline-white/10 focus:outline-amber-300/50 rounded-xl p-4 w-full text-white placeholder:text-white/20 transition-all text-sm"
-                  required
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-semibold uppercase tracking-wider text-white/50">Your Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="name@example.com"
-                  className="bg-[#151515] outline outline-white/10 focus:outline-amber-300/50 rounded-xl p-4 w-full text-white placeholder:text-white/20 transition-all text-sm"
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <label className="text-xs font-semibold uppercase tracking-wider text-white/50">Your Message</label>
-              <textarea
-                name="message"
-                placeholder="Write your message here..."
-                required
-                rows={5}
-                className="bg-[#151515] outline outline-white/10 focus:outline-amber-300/50 rounded-xl p-4 w-full text-white placeholder:text-white/20 transition-all text-sm resize-none"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              className="bg-amber-300 hover:bg-amber-400 text-black font-bold p-4 w-full rounded-xl transition-colors duration-200 cursor-pointer text-base tracking-wide shadow-md"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
       </div>
 
       {/* Popup Message */}
